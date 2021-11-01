@@ -25,37 +25,39 @@ export const BMITracker: React.FunctionComponent = () => {
   return (
     <Styled styles={styles}>
       <div className='wrapper'>
-        <div className='input-wrapper'>
-          <label className='label' htmlFor="weight">Weight (in kg)</label>
-          <input
-            id="weight"
-            name="weight"
-            type="number"
-            min="1"
-            max="999"
-            placeholder="0"
-            value={state.weight}
-            onChange={handleChange}
-          />
+        <div className='card'>
+          <div className='input-wrapper'>
+            <label className='label' htmlFor="weight">Weight (in kg)</label>
+            <input
+              id="weight"
+              name="weight"
+              type="number"
+              min="1"
+              max="999"
+              placeholder="0"
+              value={state.weight}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='input-wrapper'>
+            <label className='label' htmlFor="height">Height (in cm)</label>
+            <input
+              id="height"
+              name="height"
+              type="number"
+              min="1"
+              max="999"
+              placeholder="0"
+              value={state.height}
+              onChange={handleChange}
+            />
+          </div>
+          <button className='primarybutton' onClick={calculateBMI}>
+            Calculate BMI
+          </button>
+          {bmi && <span>BMI: {bmi}</span>}
         </div>
-        <div className='input-wrapper'>
-          <label className='label' htmlFor="height">Height (in cm)</label>
-          <input
-            id="height"
-            name="height"
-            type="number"
-            min="1"
-            max="999"
-            placeholder="0"
-            value={state.height}
-            onChange={handleChange}
-          />
-        </div>
-        <button className='primarybutton' onClick={calculateBMI}>
-          Calculate BMI
-        </button>
-        {bmi && <span>BMI: {bmi}</span>}
       </div>
-    </Styled>
+    </Styled >
   )
 }
